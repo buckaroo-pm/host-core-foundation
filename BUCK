@@ -1,7 +1,9 @@
+xcode_developer_dir = read_config('apple', 'xcode_developer_dir', '/Applications/Xcode.app/Contents/Developer')
+
 genrule(
   name = 'core-foundation-framework', 
   out = 'CoreFoundation.framework', 
-  cmd = 'cp -r /System/Library/Frameworks/CoreFoundation.framework $OUT', 
+  cmd = 'cp -r ' + xcode_developer_dir + '/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/CoreFoundation.framework $OUT', 
 )
 
 prebuilt_apple_framework(
