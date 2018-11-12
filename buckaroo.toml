@@ -1,1 +1,1 @@
-targets = [ "core-foundation" ]
+targets = [ "//:core-foundation" ]
